@@ -14,10 +14,10 @@ def get_crypto_historical_data(crypto_id, days):
     }
     response = requests.get(url, params=parameters)
     data = response.json()
-    return data
+    return data['prices']
 
 # Number of days of historical data to retrieve
-days = 7
+days = 365
 
 # Fetch historical data
 bitcoin_data = get_crypto_historical_data('bitcoin', days)
@@ -32,6 +32,6 @@ crypto_data = {
 # Save the data to a JSON file
 output_file = 'crypto_price_history.json'
 with open(output_file, 'w') as file:
-    json.dump(crypto_data.prices, file, indent=4)
+    json.dump(crypto_data, file, indent=2)
 
 print(f"Crypto price history saved to {output_file}")
