@@ -43,8 +43,7 @@ st.sidebar.markdown("""
 # Copyright
 st.sidebar.caption("©️ Copyright 2024 J. Davis")
 
-
-
+# Data
 source = data.stocks()
 all_symbols = source.symbol.unique()
 symbols = st.multiselect("Choose assets to visualize", all_symbols, all_symbols[:3])
@@ -57,9 +56,9 @@ st.altair_chart(chart, use_container_width=True)
 
 space(2)
 
-# COMMENTS
-conn = db.connect()
-comments = db.collect(conn)
+# Comments
+#conn = db.connect()
+#comments = db.collect(conn)
 
 with st.expander("View Comments"):
 
@@ -87,4 +86,4 @@ with st.expander("View Comments"):
         db.insert(conn, [[name, comment, date]])
         if "just_posted" not in st.session_state:
             st.session_state["just_posted"] = True
-        st.experimental_rerun()
+        st.rerun()
