@@ -17,8 +17,8 @@ def get_crypto_historical_data(crypto_id, days):
 days = 7
 
 # Fetch historical data
-bitcoin_data = get_crypto_historical_data('bitcoin', days)
-ethereum_data = get_crypto_historical_data('ethereum', days)
+bitcoin_data = get_crypto_historical_data('btcusd', days)
+ethereum_data = get_crypto_historical_data('ethusd', days)
 
 # Combine data into a single dictionary
 crypto_data = {
