@@ -1,6 +1,7 @@
 streamlit
 
-utils==1.0.2
+#utils==1.0.2
+python-utils
 
 altair
 vega-datasets
