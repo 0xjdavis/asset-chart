@@ -2,7 +2,7 @@ import streamlit as st
 
 from datetime import datetime
 from vega_datasets import data
-from utils import chart, db
+from utils import chart, db, crypto
 
 COMMENT_TEMPLATE_MD = """{} - {}
 > {}"""
@@ -44,7 +44,8 @@ st.sidebar.markdown("""
 st.sidebar.caption("©️ Copyright 2024 J. Davis")
 
 # Data
-source = data.stocks()
+#source = data.stocks()
+source = 
 all_symbols = source.symbol.unique()
 symbols = st.multiselect("Choose assets to visualize", all_symbols, all_symbols[:3])
 
@@ -56,9 +57,18 @@ st.altair_chart(chart, use_container_width=True)
 
 space(2)
 
+
+
+
+
+
+
 # Comments
 conn = db.connect()
 comments = db.collect(conn)
+crypto = crypto.get_crypto_historical_data(crypto_id, days)
+
+st.write(crypto)
 
 with st.expander("View Comments"):
 
