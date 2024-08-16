@@ -3,7 +3,10 @@ import json
 from datetime import datetime, timedelta
 
 def get_crypto_historical_data(crypto_id, days):
-    url = f'https://api.coingecko.com/api/v3/coins/{crypto_id}/market_chart'
+    # https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=bitcoin&x_cg_demo_api_key=YOUR_API_KEY
+    coingecko_api_key = st.secrets["coingecko_api_key"]
+    
+    url = f'https://api.coingecko.com/api/v3/coins/{crypto_id}/market_chart&x_cg_demo_api_key={coingecko_api_key}'
     parameters = {
         'vs_currency': 'usd',
         'days': days,
@@ -17,8 +20,8 @@ def get_crypto_historical_data(crypto_id, days):
 days = 7
 
 # Fetch historical data
-bitcoin_data = get_crypto_historical_data('btcusd', days)
-ethereum_data = get_crypto_historical_data('ethusd', days)
+bitcoin_data = get_crypto_historical_data('bitcoin', days)
+ethereum_data = get_crypto_historical_data('ethereum', days)
 
 # Combine data into a single dictionary
 crypto_data = {
