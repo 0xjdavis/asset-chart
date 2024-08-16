@@ -57,15 +57,13 @@ st.altair_chart(chart, use_container_width=True)
 space(2)
 
 
-
-
-
-
-
 # Comments
 conn = db.connect()
 comments = db.collect(conn)
-crypto = crypto.get_crypto_historical_data()
+
+crypto_id = ""
+days = ""
+crypto = crypto.get_crypto_historical_data(crypto_id, days)
 
 st.write(crypto)
 
