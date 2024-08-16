@@ -65,7 +65,7 @@ space(2)
 # Comments
 conn = db.connect()
 comments = db.collect(conn)
-crypto = crypto.get_crypto_historical_data(crypto_id, days)
+crypto = crypto.get_crypto_historical_data()
 
 st.write(crypto)
 
