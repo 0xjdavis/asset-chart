@@ -46,7 +46,7 @@ st.sidebar.caption("©️ Copyright 2024 J. Davis")
 # Data
 source = data.stocks()
 all_symbols = source.symbol.unique()
-symbols = st.multiselect("Choose assets to visualize", all_symbols, all_symbols[:3])
+symbols = st.multiselect("Select assets to compare.", all_symbols, all_symbols[:3])
 
 space(1)
 
