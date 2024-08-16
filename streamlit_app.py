@@ -24,7 +24,7 @@ st.set_page_config(
 
 # Sidebar
 st.sidebar.header("About App")
-st.sidebar.markdown('This is an app that retreives financial data from a Google Sheet, displays it in a chart, and allows users to comment on it storing it in the cloud; created by <a href="https://ai.jdavis.xyz" target="_blank">0xjdavis</a>.', unsafe_allow_html=True)
+st.sidebar.markdown('This is an app that retreives financial data from a dataset, displays it in a chart, and allows users to comment on it storing it in a Google Sheet created by <a href="https://ai.jdavis.xyz" target="_blank">0xjdavis</a>.', unsafe_allow_html=True)
 
 # Calendly
 st.sidebar.markdown("""
