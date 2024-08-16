@@ -1,4 +1,4 @@
-streamlit-nightly
+# App usese experimental features in streamlit
 altair
 vega-datasets
 pandas
