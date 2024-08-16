@@ -61,7 +61,7 @@ space(2)
 conn = db.connect()
 comments = db.collect(conn)
 
-crypto_id = ["bitcoin", "ethereum"]
+crypto_id = {"bitcoin", "ethereum"}
 days = "365"
 crypto = crypto.get_crypto_historical_data(crypto_id, days)
 
