@@ -32,6 +32,6 @@ crypto_data = {
 # Save the data to a JSON file
 output_file = 'crypto_price_history.json'
 with open(output_file, 'w') as file:
-    json.dump(crypto_data.prices[], file, indent=4)
+    json.dump(crypto_data.prices, file, indent=4)
 
 print(f"Crypto price history saved to {output_file}")
