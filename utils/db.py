@@ -15,7 +15,7 @@ SPREADSHEET_ID = "1rkMVLvh3JrBq_tbi4Ho0qjCDAP3vYdNuWOEjYpkJLNU"
 SHEET_NAME = "Database"
 GSHEET_URL = f"https://docs.google.com/spreadsheets/d/{SPREADSHEET_ID}"
 
-@st.singleton()
+@st.experimental_singleton
 def connect():
     # Create a connection object.
     credentials = service_account.Credentials.from_service_account_info(
