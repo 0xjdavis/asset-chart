@@ -65,7 +65,8 @@ crypto_id = "bitcoin"
 days = "365"
 crypto = crypto.get_crypto_historical_data(crypto_id, days)
 
-st.write(crypto)
+# commented out until i can figure out the data stuff
+# st.write(crypto)
 
 with st.expander("View Comments"):
 
