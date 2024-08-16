@@ -4,8 +4,6 @@ import json
 from datetime import datetime, timedelta
 
 def get_crypto_historical_data(crypto_id, days):
-    # https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=bitcoin&x_cg_demo_api_key=YOUR_API_KEY
-    # https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=30&interval=daily&x_cg_demo_api_key=CG-FpgVoJZm3RsffPhSvEYgjQVX
     coingecko_api_key = st.secrets["coingecko_api_key"]
     
     url = f'https://api.coingecko.com/api/v3/coins/{crypto_id}/market_chart?vs_currency=usd&days=30&interval=daily&x_cg_demo_api_key={coingecko_api_key}'
