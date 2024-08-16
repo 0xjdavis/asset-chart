@@ -13,8 +13,18 @@ def space(num_lines=1):
     for _ in range(num_lines):
         st.write("")
 
+
+# Setting page layout
+st.set_page_config(
+    page_title="Asset Chart with Comments",
+    page_icon="✨",
+    layout="centered",
+    initial_sidebar_state="expanded"
+)
+
+# Sidebar
 st.sidebar.header("About App")
-st.sidebar.write("This is a zero-shot text-to-image generation chatbot using OpenAI DALL-E 3 model by 0xjdavis")
+st.sidebar.markdown('This is an app that retreives financial data, displays it in a chart, and allows userst to comment on it; created by <a href="https://ai.jdavis.xyz" target="_blank">0xjdavis</a>.', unsafe_allow_html=True)
 
 # Calendly
 st.sidebar.markdown("""
@@ -24,7 +34,7 @@ st.sidebar.markdown("""
     <img src="https://avatars.githubusercontent.com/u/98430977" alt="Oxjdavis" height="100" width="100" border="0" style="border-radius:50%"/>
     <br />
     <span style="height:12px;width:12px;background-color:#77e0b5;border-radius:50%;display:inline-block;"></span> <b>I'm available for new projects!</b><br />
-    <a href="https://calendly.com/0xjavis" target="_blank"><button style="background:#126ff3;color:#fff;border: 1px #126ff3 solid;border-radius:8px;padding:8px 16px;margin:10px 0">Schedule a call</button></a><br />
+    <a href="https://calendly.com/0xjdavis" target="_blank"><button style="background:#126ff3;color:#fff;border: 1px #126ff3 solid;border-radius:8px;padding:8px 16px;margin:10px 0">Schedule a call</button></a><br />
     </div>
     </center>
     <br />
@@ -32,13 +42,12 @@ st.sidebar.markdown("""
 
 # Copyright
 st.sidebar.caption("©️ Copyright 2024 J. Davis")
-    
 
-st.title("Asset Chart with Comments")
+
 
 source = data.stocks()
 all_symbols = source.symbol.unique()
-symbols = st.multiselect("Choose stocks to visualize", all_symbols, all_symbols[:3])
+symbols = st.multiselect("Choose assets to visualize", all_symbols, all_symbols[:3])
 
 space(1)
 
@@ -67,8 +76,7 @@ with st.expander("View Comments"):
 
     space(2)
 
-    # Insert comment
-    st.write("**Add your own comment:**")
+    st.write("**Share your thoughts:**")
     form = st.form("comment")
     name = form.text_input("Name")
     comment = form.text_area("Comment")
