@@ -44,8 +44,7 @@ st.sidebar.markdown("""
 st.sidebar.caption("©️ Copyright 2024 J. Davis")
 
 # Data
-#source = data.stocks()
-source = 
+source = data.stocks()
 all_symbols = source.symbol.unique()
 symbols = st.multiselect("Choose assets to visualize", all_symbols, all_symbols[:3])
 
